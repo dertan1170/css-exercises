@@ -1,5 +1,6 @@
 body {
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 img {
@@ -10,7 +11,31 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
+  margin-bottom: 32px;
 }
+
+.container {
+  /* Eureka: By grouping each image with its accompanying text inside a div, the flex container now treats each div as flex elements. So instead of handling 4 images and 4 text elements separately, I only need to manage 4 combined items, each containing an image and text together.
+  */
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+}
+
+.info {
+  max-width: 200px;
+  /* Commented out code below is what I was doing before. Basically making each class=".info" a flex container. While this allows for more flexibility in this case it was not needed. */
+  /* As a flex container */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+/* .text {
+  margin-top: 5px;
+  max-width: 200px;
+  border: 1px solid red;
+} */
 
 /* do not edit this footer */
 .footer {
