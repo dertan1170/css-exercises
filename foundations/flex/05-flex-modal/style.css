@@ -20,6 +20,10 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  /* Top level flex container */
+  display: flex;
+  gap: 16px;
+  padding: 16px;
 }
 
 .icon {
@@ -33,6 +37,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* setting flex-shrink to 0 causes the icon to not shrink */
+  flex-shrink: 0;
 }
 
 .close-button {
@@ -48,6 +54,9 @@ body {
   justify-content: center;
   border: 1px solid #eee;
   padding: 0;
+  /* send the close button to the very right */
+  /* Solution uses "justify-content: space-between;" instead of the auto margin trick in order to correctly space the close button to the right */
+  margin-left: auto;
 }
 
 button {
@@ -66,4 +75,24 @@ button.cancel {
   background: white;
   border: 1px solid #ddd;
   color: royalblue;
+}
+
+/* Used to position heading and button */
+.header {
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Flex container under top level */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Positioning to match solution */
+.text {
+  margin-bottom: 16px;
 }
