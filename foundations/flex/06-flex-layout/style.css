@@ -5,6 +5,10 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Solution shows an alternative way instead of using justify-content: space-between to center the context. They instead use flex: 1 for the .content flex item and center the flex items inside of .content (which is also a the flex container containing the image and search bar) using justify-content and align-items*/
 }
 
 img {
@@ -16,6 +20,8 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  /* The sides have more padding than the top/bottom */
+  padding: 8px 16px;
 }
 
 input {
@@ -23,4 +29,35 @@ input {
   border-radius: 16px;
   padding: 8px 24px;
   width: 400px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:16px;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+.header,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.footer {
+  background-color: #eeeeee;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  gap: 16px;
 }
