@@ -2,28 +2,78 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+  font-size: 32px;
+  font-weight: 900;
+  /* due to the height and align-items properties there is no need to define top and bottom padding for the header */
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  /* flex: 0; is not required due to the default flex values*/
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+  display: flex;
+  justify-content: center;
+  /* due to the height and align-items properties there is no need to define top and bottom padding for the header */
+  align-items: center;
+  /* flex: 0; is not required due to the default flex values*/
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
   box-sizing: border-box;
+  /* flex-shrink: 0 makes sure that the sidebar doesn't shrink even when there is not enough space */
+  flex-shrink: 0;
+  padding: 16px;
 }
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  flex-basis: 300px;
+  /* the solution uses width: 300px; however I used flex-basis which is another way to solve the same issue. It should be noted however that at very small widths it behaves differently*/
+  padding: 16px;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 48px;
+  /* flex: 1; is not needed here */
+  flex: 1;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
 }
